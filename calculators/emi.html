@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator - Home, Car, Personal Loan | FinCalc</title>
+    <meta name="description" content="Calculate your customized EMI for Home Loans, Car Loans, and Personal Loans. Check monthly installments and total interest payable.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="../index.html" class="logo"><i class="fa-solid fa-chart-line"></i> FinCalc <span>India</span></a>
+                <a href="../index.html" style="margin-left: auto; font-weight: 500; color: var(--text-body);"><i class="fa-solid fa-house"></i> Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 3rem 0;">
+        <div style="max-width: 800px; margin: 0 auto 3rem; text-align: center;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">EMI Calculator</h1>
+            <p style="color: var(--text-body);">Plan your loan repayments with precision.</p>
+        </div>
+
+        <div class="calculator-container calc-layout">
+            <!-- Inputs -->
+            <div class="inputs-panel">
+                <div class="input-group">
+                    <label for="loan-amount">Loan Amount</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">₹</span>
+                        <input type="number" id="loan-amount" class="calc-input has-icon" value="1000000">
+                    </div>
+                    <input type="range" id="loan-amount-range" min="10000" max="10000000" step="10000" value="1000000" style="accent-color: #ea580c;">
+                </div>
+
+                <div class="input-group">
+                    <label for="interest-rate">Interest Rate (p.a)</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="interest-rate" class="calc-input has-unit" value="8.5">
+                        <span class="percentage-symbol">%</span>
+                    </div>
+                    <input type="range" id="interest-rate-range" min="1" max="25" step="0.1" value="8.5" style="accent-color: #ea580c;">
+                </div>
+
+                <div class="input-group">
+                    <label for="loan-tenure">Loan Tenure</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="loan-tenure" class="calc-input has-unit" value="5">
+                        <span class="unit-symbol">Yr</span>
+                    </div>
+                    <input type="range" id="loan-tenure-range" min="1" max="30" step="1" value="5" style="accent-color: #ea580c;">
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="results-panel" style="background: linear-gradient(145deg, #fff7ed, #fff);">
+                <div style="text-align: center; margin-bottom: 2rem; position: relative; height: 200px;">
+                    <canvas id="emi-chart"></canvas>
+                </div>
+
+                <div class="result-card" style="border-color: #fed7aa; background: #fffaf0;">
+                    <span class="label">Monthly EMI</span>
+                    <span id="emi-val" style="font-weight: 700; font-size: 1.5rem; color: #ea580c;">₹20,517</span>
+                </div>
+
+                <div class="result-card">
+                    <span class="label">Total Interest</span>
+                    <span id="interest-val" style="font-weight: 600;">₹2,31,000</span>
+                </div>
+                <div class="result-card">
+                    <span class="label">Total Amount</span>
+                    <span id="total-val" style="font-weight: 600;">₹12,31,000</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Educational Content -->
+        <div style="max-width: 800px; margin: 4rem auto; color: #334155; line-height: 1.6;">
+            <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: #0f172a;">What is an EMI?</h2>
+            <p style="margin-bottom: 1.5rem;">
+                An Equated Monthly Installment (EMI) is a fixed payment amount made by a borrower to a lender at a specified date each calendar month. Equated monthly installments are used to pay off both interest and principal each month so that over a specified number of years, the loan is paid off in full.
+            </p>
+
+            <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: #0f172a;">How is EMI Calculated?</h3>
+            <p style="margin-bottom: 1rem;">
+                The mathematical formula for calculating EMI is:
+            </p>
+            <div style="background: #f8fafc; padding: 1.5rem; border-radius: 8px; font-family: monospace; font-size: 1.1rem; margin-bottom: 1.5rem; border: 1px solid #e2e8f0;">
+                E = P x r x (1+r)^n / ((1+r)^n - 1)
+            </div>
+            <ul style="margin-bottom: 2rem; padding-left: 1.5rem;">
+                <li><strong>E</strong> is EMI</li>
+                <li><strong>P</strong> is Principal Loan Amount</li>
+                <li><strong>r</strong> is rate of interest calculated on a monthly basis (i.e., r = Rate of Annual interest/12/100)</li>
+                <li><strong>n</strong> is loan tenure in months</li>
+            </ul>
+
+            <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: #0f172a;">Factors Affecting Your EMI</h2>
+            <p style="margin-bottom: 1rem;">
+                Understanding the components of your loan can help you plan better. The key factors that influence your EMI amount include:
+            </p>
+            <ul style="margin-bottom: 2rem; padding-left: 1.5rem;">
+                <li style="margin-bottom: 0.5rem;"><strong>Principal Amount:</strong> The total amount you borrow. A higher loan amount directly increases your EMI.</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Interest Rate:</strong> The rate at which the lender charges interest. Even a small difference in rates can significantly impact your monthly outgo.</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Loan Tenure:</strong> The duration for which you borrow the money. A longer tenure reduces your monthly EMI but increases the total interest paid over time. Conversely, a shorter tenure increases EMI but saves on total interest.</li>
+            </ul>
+
+            <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: #0f172a;">Benefits of Using an EMI Calculator</h2>
+            <p style="margin-bottom: 1.5rem;">
+                Calculating EMIs manually can be complex and prone to errors. Our FinCalc India EMI Calculator helps you:
+            </p>
+            <ul style="margin-bottom: 2rem; padding-left: 1.5rem;">
+                <li style="margin-bottom: 0.5rem;"><strong>Plan Your Budget:</strong> Know exactly how much you need to set aside each month before applying for a loan.</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Compare Scenarios:</strong> Adjust the loan amount and tenure to find an EMI that fits your pocket.</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Save Money:</strong> experiment with prepayments or shorter tenures to see how much interest you can save.</li>
+            </ul>
+
+            <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: #0f172a;">Frequently Asked Questions (FAQ)</h2>
+            <div style="margin-bottom: 1.5rem;">
+                <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: #1e293b;">1. Does this calculator work for all types of loans?</h4>
+                <p>Yes, this standard EMI calculator works for Home Loans, Car Loans, Personal Loans, and Education Loans that follow a reducing balance method.</p>
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+                <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: #1e293b;">2. Is the EMI amount fixed for the entire tenure?</h4>
+                <p>Generally, yes. However, if you have a floating rate loan, your EMI may change if the repo rate or the bank's lending rate changes.</p>
+            </div>
+            <div>
+                <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: #1e293b;">3. Can I use this for pre-payment calculations?</h4>
+                <p>This tool gives you the base EMI. Pre-payments reduce your principal faster, which either reduces your tenure or your future EMIs, depending on your bank's policy.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="emi.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

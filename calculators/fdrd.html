@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FD / RD Calculator | FinCalc India</title>
+    <meta name="description" content="Calculate maturity amount for Fixed Deposits (FD) and Recurring Deposits (RD).">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="../index.html" class="logo"><i class="fa-solid fa-chart-line"></i> FinCalc <span>India</span></a>
+                <a href="../index.html" style="margin-left: auto;">Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 3rem 0;">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h1 style="background: linear-gradient(135deg, #c2410c 0%, #ea580c 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">FD / RD Calculator</h1>
+            <p style="color: var(--text-body);">Compare returns on your bank deposits.</p>
+        </div>
+
+        <div class="calculator-container calc-layout" style="max-width: 900px; margin: 0 auto; display: block;">
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+                <div class="inputs-panel">
+                    <div class="input-group">
+                        <label for="calc-type">Calculator Type</label>
+                        <div class="input-wrapper">
+                            <select id="calc-type" class="calc-input" style="cursor: pointer;">
+                                <option value="fd">Fixed Deposit (FD)</option>
+                                <option value="rd">Recurring Deposit (RD)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label id="amount-label" for="amount">Deposit Amount (Lumpsum)</label>
+                        <div class="input-wrapper">
+                            <span class="currency-symbol">₹</span>
+                            <input type="number" id="amount" class="calc-input has-icon" value="100000">
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                        <div class="input-group">
+                            <label for="rate">Interest Rate</label>
+                            <div class="input-wrapper">
+                                <input type="number" id="rate" class="calc-input has-unit" value="6.5">
+                                <span class="percentage-symbol">%</span>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="years">Time Period</label>
+                            <div class="input-wrapper">
+                                <input type="number" id="years" class="calc-input has-unit" value="5">
+                                <span class="unit-symbol">Yr</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-panel" style="background: #fff7ed; padding: 2rem; border-radius: var(--radius-lg); display: flex; flex-direction: column; justify-content: center;">
+                    <div class="result-card" style="background: #fff; border-color: #fed7aa;">
+                        <span class="label">Invested Amount</span>
+                        <span class="value" id="invested-val">₹1,00,000</span>
+                    </div>
+                    <div class="result-card" style="background: #fff; border-color: #fed7aa;">
+                        <span class="label">Interest Earned</span>
+                        <span class="value" id="interest-val" style="color: #ea580c;">₹38,042</span>
+                    </div>
+                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px dashed #fdba74; text-align: center;">
+                        <div style="font-size: 0.9rem; color: #9a3412; margin-bottom: 0.5rem;">Maturity Value</div>
+                        <div id="maturity-val" style="font-size: 2.5rem; font-weight: 800; color: #c2410c;">₹1,38,042</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="fdrd.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

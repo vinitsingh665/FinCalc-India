@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinCalc India - Smart Financial Tools for Indian Investors</title>
+    <meta name="description" content="Free finance calculators for Indian users. SIP, Income Tax (FY 2025-26), EMI, and Savings planning tools. Trustworthy, fast, and easy to use.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <i class="fa-solid fa-chart-line"></i>
+                    FinCalc <span>India</span>
+                </a>
+                
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="#calculators">Calculators</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Smart Financial Planning <br>for Indians</h1>
+            <p style="font-size: 1.25rem; color: var(--text-body); max-width: 600px; margin: 0 auto 2rem;">Reliable calculators for your investments, loans, and tax planning. Data-focused tools to help you make better financial decisions.</p>
+            
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <div class="input-wrapper" style="width: auto; min-width: 250px;">
+                    <select id="quick-access" class="calc-input" style="cursor: pointer;">
+                        <option value="">Jump to a calculator...</option>
+                        <option value="calculators/sip.html">SIP Calculator</option>
+                        <option value="calculators/tax.html">Income Tax (FY 2025-26)</option>
+                        <option value="calculators/emi.html">EMI Calculator</option>
+                        <option value="calculators/savings.html">Savings Goal</option>
+                    </select>
+                </div>
+                <a href="#calculators" class="btn btn-primary"><i class="fa-solid fa-grid-2"></i> Explore All Tools</a>
+            </div>
+
+            <div style="margin-top: 3rem; display: flex; gap: 2rem; justify-content: center; font-size: 0.95rem; color: var(--text-muted);">
+                <span><i class="fa-solid fa-check-circle" style="color: var(--secondary-color);"></i> Updated for FY 2025-26</span>
+                <span><i class="fa-solid fa-bolt" style="color: var(--accent-gold);"></i> Instant Results</span>
+                <span><i class="fa-solid fa-shield-halved" style="color: var(--primary-color);"></i> No Data Stored</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="calculators" class="container">
+        <div class="calculator-grid">
+            
+            <!-- SIP Calculator -->
+            <a href="calculators/sip.html" class="calc-card card-green">
+                <div class="calc-icon">
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+                </div>
+                <h3>SIP Calculator</h3>
+                <p>Calculate future returns on your Systematic Investment Plans (SIP) with ease.</p>
+                <span class="btn btn-outline" style="width: 100%;">Open Tool <i class="fa-solid fa-arrow-right" style="font-size: 0.8rem;"></i></span>
+            </a>
+
+            <!-- Income Tax Calculator -->
+            <a href="calculators/tax.html" class="calc-card card-blue">
+                <div class="calc-icon">
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                </div>
+                <h3>Income Tax Calculator</h3>
+                <p>Estimate your tax liability for FY 2025-26 under New & Old Regimes.</p>
+                <span class="btn btn-outline" style="width: 100%;">Open Tool <i class="fa-solid fa-arrow-right" style="font-size: 0.8rem;"></i></span>
+            </a>
+
+            <!-- EMI Calculator -->
+            <a href="calculators/emi.html" class="calc-card card-orange">
+                <div class="calc-icon">
+                    <i class="fa-solid fa-house-chimney"></i>
+                </div>
+                <h3>EMI Calculator</h3>
+                <p>Plan your home, car, or personal loan repayments accurately.</p>
+                <span class="btn btn-outline" style="width: 100%;">Open Tool <i class="fa-solid fa-arrow-right" style="font-size: 0.8rem;"></i></span>
+            </a>
+
+            <!-- Savings Goal -->
+            <a href="calculators/savings.html" class="calc-card card-green">
+                <div class="calc-icon">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <h3>Savings Goal Planner</h3>
+                <p>Find out how much you need to save monthly to reach your target.</p>
+                <span class="btn btn-outline" style="width: 100%;">Open Tool <i class="fa-solid fa-arrow-right" style="font-size: 0.8rem;"></i></span>
+            </a>
+
+            <!-- Budget Custom -->
+            <a href="calculators/budget.html" class="calc-card card-blue">
+                <div class="calc-icon">
+                    <i class="fa-solid fa-wallet"></i>
+                </div>
+                <h3>Budget Planner</h3>
+                <p>Master your monthly expenses using the 50/30/20 budgeting rule.</p>
+                <span class="btn btn-outline" style="width: 100%;">Open Tool <i class="fa-solid fa-arrow-right" style="font-size: 0.8rem;"></i></span>
+            </a>
+
+            <!-- FD/RD Calculator -->
+            <a href="calculators/fdrd.html" class="calc-card card-orange">
+                <div class="calc-icon">
+                    <i class="fa-solid fa-piggy-bank"></i>
+                </div>
+                <h3>FD / RD Calculator</h3>
+                <p>Calculate maturity amounts for Fixed and Recurring Deposits.</p>
+                <span class="btn btn-outline" style="width: 100%;">Open Tool <i class="fa-solid fa-arrow-right" style="font-size: 0.8rem;"></i></span>
+            </a>
+
+        </div>
+    </section>
+
+    <footer style="background-color: #0c1528; color: #fff; padding: 4rem 0 2rem; margin-top: 4rem;">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 3rem;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h4 style="color: #fff; font-size: 1.5rem; margin-bottom: 1rem;"><i class="fa-solid fa-chart-line" style="color: #10b981;"></i> FinCalc India</h4>
+                    <p style="color: #94a3b8; font-size: 1rem; max-width: 400px;">Empowering Indians with simple, fast, and accurate financial tools for better money management.</p>
+                </div>
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 1rem;">Quick Links</h4>
+                    <ul style="list-style: none; font-size: 0.95rem; color: #94a3b8; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li><a href="about.html" style="color: #94a3b8; transition: color 0.2s;">About Us</a></li>
+                        <li><a href="contact.html" style="color: #94a3b8; transition: color 0.2s;">Contact</a></li>
+                        <li><a href="privacy.html" style="color: #94a3b8; transition: color 0.2s;">Privacy Policy</a></li>
+                        <li><a href="terms.html" style="color: #94a3b8; transition: color 0.2s;">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #1e293b; margin-top: 3rem; padding-top: 1.5rem; text-align: center; color: #64748b; font-size: 0.9rem;">
+                &copy; 2026 FinCalc India. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

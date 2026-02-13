@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Goal Planner | FinCalc India</title>
+    <meta name="description" content="Plan your financial goals. Calculate how much you need to save monthly to reach your target corpus.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="../index.html" class="logo"><i class="fa-solid fa-chart-line"></i> FinCalc <span>India</span></a>
+                <a href="../index.html" style="margin-left: auto;">Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 3rem 0;">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h1 style="background: linear-gradient(135deg, #059669 0%, #047857 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Savings Goal Planner</h1>
+            <p style="color: var(--text-body);">Map out your path to financial freedom.</p>
+        </div>
+
+        <div class="calculator-container" style="max-width: 800px; margin: 0 auto; padding: 3rem;">
+            
+            <div class="input-group" style="margin-bottom: 2rem;">
+                <label for="goal-amount" style="font-size: 1.1rem;">Target Goal Amount</label>
+                <div class="input-wrapper">
+                    <span class="currency-symbol" style="font-size: 1.25rem;">₹</span>
+                    <input type="number" id="goal-amount" class="calc-input has-icon" value="1000000" style="font-size: 1.5rem; padding-top: 1rem; padding-bottom: 1rem;">
+                </div>
+                <input type="range" id="goal-amount-range" min="100000" max="50000000" step="100000" value="1000000">
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem;">
+                <div class="input-group">
+                    <label for="time-period">Time Period</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="time-period" class="calc-input has-unit" value="5">
+                        <span class="unit-symbol">Yr</span>
+                    </div>
+                    <input type="range" id="time-period-range" min="1" max="30" step="1" value="5">
+                </div>
+                <div class="input-group">
+                    <label for="return-rate">Expected Return (p.a)</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="return-rate" class="calc-input has-unit" value="12">
+                        <span class="percentage-symbol">%</span>
+                    </div>
+                    <input type="range" id="return-rate-range" min="1" max="25" step="0.5" value="12">
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #059669, #047857); padding: 2.5rem; border-radius: var(--radius-xl); text-align: center; color: #fff; box-shadow: var(--shadow-xl);">
+                <div style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 0.5rem;">To reach your goal, save monthly</div>
+                <div id="monthly-req" style="font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; text-shadow: 0 4px 10px rgba(0,0,0,0.2);">₹12,200</div>
+                
+                <div style="display: flex; gap: 2rem; justify-content: center; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1.5rem;">
+                    <div>
+                        <div style="font-size: 0.85rem; opacity: 0.8;">Total Investment</div>
+                        <div id="total-inv" style="font-size: 1.25rem; font-weight: 600;">₹7,32,000</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.85rem; opacity: 0.8;">Interest Earned</div>
+                        <div id="total-int" style="font-size: 1.25rem; font-weight: 600;">₹2,68,000</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="savings.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

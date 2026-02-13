@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - FinCalc India</title>
+    <meta name="description" content="Get in touch with the FinCalc India team for feedback, suggestions, or support.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <i class="fa-solid fa-chart-line"></i>
+                    FinCalc <span>India</span>
+                </a>
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#calculators">Calculators</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 4rem 0;">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h1 style="background: linear-gradient(135deg, #0c1528 0%, #1e293b 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem;">Get in Touch</h1>
+                <p style="font-size: 1.1rem; color: var(--text-body);">Have a suggestion or found a bug? We'd love to hear from you.</p>
+            </div>
+
+            <div style="background: #fff; padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-md);">
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you for your message! This is a demo form.');">
+                    <div class="input-group" style="margin-bottom: 1.5rem;">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" class="calc-input" placeholder="John Doe" required>
+                    </div>
+                    
+                    <div class="input-group" style="margin-bottom: 1.5rem;">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="calc-input" placeholder="john@example.com" required>
+                    </div>
+                    
+                    <div class="input-group" style="margin-bottom: 1.5rem;">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="calc-input" rows="5" placeholder="How can we help you?" required style="resize: vertical;"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+
+            <div style="margin-top: 3rem; text-align: center; color: var(--text-muted);">
+                <p><i class="fa-solid fa-envelope" style="margin-right: 0.5rem;"></i> support@fincalcindia.com</p>
+                <p style="margin-top: 0.5rem;"><i class="fa-solid fa-location-dot" style="margin-right: 0.5rem;"></i> Bangalore, India</p>
+            </div>
+        </div>
+    </main>
+
+    <footer style="background-color: #0c1528; color: #fff; padding: 4rem 0 2rem;">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 3rem;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h4 style="color: #fff; font-size: 1.5rem; margin-bottom: 1rem;"><i class="fa-solid fa-chart-line" style="color: #10b981;"></i> FinCalc India</h4>
+                    <p style="color: #94a3b8; font-size: 1rem; max-width: 400px;">Empowering Indians with simple, fast, and accurate financial tools for better money management.</p>
+                </div>
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 1rem;">Quick Links</h4>
+                    <ul style="list-style: none; font-size: 0.95rem; color: #94a3b8; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html" style="color: #fff;">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #1e293b; margin-top: 3rem; padding-top: 1.5rem; text-align: center; color: #64748b; font-size: 0.9rem;">
+                &copy; 2026 FinCalc India. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

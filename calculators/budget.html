@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Planner (50/30/20 Rule) | FinCalc India</title>
+    <meta name="description" content="Plan your monthly budget using the popular 50/30/20 rule. Allocate your income towards Needs, Wants, and Savings effectively.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="../index.html" class="logo"><i class="fa-solid fa-chart-line"></i> FinCalc <span>India</span></a>
+                <a href="../index.html" style="margin-left: auto;">Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 3rem 0;">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h1 style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Budget Planner</h1>
+            <p style="color: var(--text-body);">Master your money with the 50/30/20 Rule.</p>
+        </div>
+
+        <div class="calculator-container calc-layout">
+            <div style="display: flex; flex-direction: column; justify-content: center;">
+                <div class="input-group">
+                    <label for="monthly-income" style="font-size: 1.1rem;">Monthly Income (After Tax)</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">₹</span>
+                        <input type="number" id="monthly-income" class="calc-input has-icon" value="50000" style="font-size: 1.25rem;">
+                    </div>
+                    <input type="range" id="monthly-income-range" min="10000" max="500000" step="1000" value="50000" style="accent-color: #3b82f6;">
+                </div>
+                
+                <div style="margin-top: 3rem; height: 300px; position: relative;">
+                    <canvas id="budget-chart"></canvas>
+                </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; justify-content: center;">
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem;">Recommended Allocation</h3>
+                
+                <div class="result-card" style="background: #eff6ff; border-left: 4px solid #3b82f6; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                    <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+                        <span class="label" style="color: #1e3a8a; font-weight: 700;">Needs (50%)</span>
+                        <span id="needs-val" class="value" style="color: #1e3a8a;">₹25,000</span>
+                    </div>
+                    <div style="font-size: 0.85rem; color: #60a5fa;">Rent, Groceries, Utilities, EMFs</div>
+                </div>
+
+                <div class="result-card" style="background: #fffbeb; border-left: 4px solid #f59e0b; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                    <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+                        <span class="label" style="color: #92400e; font-weight: 700;">Wants (30%)</span>
+                        <span id="wants-val" class="value" style="color: #92400e;">₹15,000</span>
+                    </div>
+                    <div style="font-size: 0.85rem; color: #f59e0b;">Dining, Shopping, Hobbies</div>
+                </div>
+
+                <div class="result-card" style="background: #f0fdf4; border-left: 4px solid #10b981; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                    <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+                        <span class="label" style="color: #065f46; font-weight: 700;">Savings (20%)</span>
+                        <span id="savings-val" class="value" style="color: #065f46;">₹10,000</span>
+                    </div>
+                    <div style="font-size: 0.85rem; color: #34d399;">Investments, Emergency Fund, Debt Repayment</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="budget.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>
