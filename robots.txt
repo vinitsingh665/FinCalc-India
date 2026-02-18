@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://vinitsingh665.github.io/FinCalc-India/sitemap.xml
